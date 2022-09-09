@@ -1,7 +1,9 @@
 #include<stdio.h>
 /**
- * main function is entry point of program,void means it has no input arguments for these program
- * return an int,zero valuee if no errors
+ * Main-function is entry point of program
+ * main void means no arguments in program
+ * Puts is used to print strings only
+ * Return-returns an int of 0 if no errors,non 0 if error
  */
 int main(void)
 {
