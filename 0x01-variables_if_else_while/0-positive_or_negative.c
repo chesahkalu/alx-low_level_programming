@@ -2,8 +2,11 @@
 #include <time.h>
 #include <stdio.h>
 /* more headers goes there */
-
-/* Main - starts the program*/
+/**
+ * main - is entry point
+ *
+ * Return: 1, if succesful
+ */
 int main(void)
 {
 	int n;
