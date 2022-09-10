@@ -15,8 +15,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	/* This arithemetic function results last digits of n*/
-	int x = n % 10;
+	/* x arithemetic function results last digits of n as x*/
+	int x;
+
+	x = n % 10;
 
 	if (x > 5)
 	{
