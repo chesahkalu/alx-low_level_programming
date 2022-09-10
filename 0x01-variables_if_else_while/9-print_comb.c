@@ -15,6 +15,8 @@ int main(void)
 
 	for (x = 0 ; x < 10 ; x++)
 	{
+		if (x == 9)
+			continue;
 		putchar((x % 10) + '0');
 		putchar(',');
 		putchar(' ');
