@@ -7,18 +7,16 @@
  */
 int main(void)
 {
-        char lc;
+	char lc;
 
-        for (lc = 'a' ; lc <= 'z' ; lc++)
-        {
-                putchar(lc);
-        }
-         char uc;
-
-        for (uc = 'A' ; uc <= 'Z' ; uc++)
-        {
-                putchar(uc);
-        }
-        putchar('\n');
-        return (0);
+	for (lc = 'a' ; lc <= 'z' ; lc++)
+	{
+		putchar(lc);
+	}
+	for (lc = 'a' ; lc <= 'z' ; lc++)
+	{
+		putchar(toupper(lc));
+	}
+	putchar('\n');
+	return (0);
 }
