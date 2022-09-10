@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * Main - prints all single digits numbers 0f base 10,
- *        starting from zero,only using put char,no char variables
+ * main - is entry of program
  *
  * Return: 0, if succesful
  */
 int main(void)
 {
+	/*
+	 * prints all single digits numbers 0f base 10,
+	 * starting from zero,only using put char,no char variables
+	 */
 	int x;
 
 	for (x = 0 ; x < 10 ; x++)
