@@ -3,7 +3,9 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* Main- starts the program */
+/* Main- starts the program
+ * Return: zero if succesful
+ */
 int main(void)
 {
 	int n;
