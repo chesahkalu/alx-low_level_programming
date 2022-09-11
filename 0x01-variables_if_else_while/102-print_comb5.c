@@ -27,13 +27,13 @@ int main(void)
 			putchar((b / 10) + '0');
 			putchar((b % 10) + '0');
 			/*continue to put coma & space until final combination*/
-			if (a == 98 && a == 99)
+			if (a == 98 && b == 99)
 				continue;
 
 			putchar(',');
 			putchar(' ');
 		}
-		putchar('\n');
-		return (0);
 	}
+	putchar('\n');
+	return (0);
 }
