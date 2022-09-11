@@ -21,13 +21,13 @@ int main(void)
 		for (b = a + 1 ; b <= 99 ; b++)
 		{
 			/*print all two digit value of both numbers*/
-			putchar((num1 / 10) + '0');
-			putchar((num1 % 10) + '0');
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
 			putchar(' ');
-			putchar((num2 / 10) + '0');
-			putchar((num2 % 10) + '0');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
 			/*continue to put coma & space until final combination*/
-			if (num1 == 98 && num2 == 99)
+			if (a == 98 && a == 99)
 				continue;
 
 			putchar(',');
