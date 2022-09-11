@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * main - is entry point
+ * main - prints the lower case of the alphabet
  *
- * Return: 1, if succesful
+ * Return: 0, if succesful
  */
 int main(void)
 {

@@ -8,7 +8,7 @@ int main(void)
 {
 	/*
 	 * prints the hexadecimal base16,using putchar only
-	 * loops through 9-0,prints them by char simulationss
+	 * loops through 9-0,prints them simulating char with arithemtics
 	 * loops through a-f, prints them
 	 */
 	int x;

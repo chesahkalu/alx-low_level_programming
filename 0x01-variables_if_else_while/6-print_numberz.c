@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * main - is entry of program
+ * main - prints single numbers of base1m
  *
  * Return: 0, if succesful
  */
