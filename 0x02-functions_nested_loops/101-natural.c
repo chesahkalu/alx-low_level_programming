@@ -14,7 +14,7 @@ int main(void)
 	for (x = 0; x <= 1023; x++)
 	{
 		if ((x % 3) == 0 || (x % 5) == 0)
-			sum += x;
+			total = total + x;
 	}
 
 	printf("%d\n", total);
