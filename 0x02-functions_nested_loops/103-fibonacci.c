@@ -18,7 +18,7 @@ int main(void)
 			break;
 
 		if ((fib % 2) == 0)
-			sum = sum + fib;
+			sum += fib;
 
 		f1 = f1;
 		f2 = fib;
