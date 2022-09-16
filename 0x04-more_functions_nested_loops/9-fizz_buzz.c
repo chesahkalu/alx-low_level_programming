@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Almighty Fizzbuzz, prints numbers from 1 to 100,
