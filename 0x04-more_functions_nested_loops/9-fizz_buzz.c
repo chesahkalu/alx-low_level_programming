@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - Almighty Fizzbuzz, prints numbers from 1 to 100,
@@ -7,7 +6,7 @@
  *        and any numbers which is multiple of 5 print Buzz,
  *        and numbers both multiple of 3 & 5,print FizzBuzz.
  *
- * Return: Always 0.
+ * Return: 0 if true.
  */
 int main(void)
 {
@@ -15,25 +14,26 @@ int main(void)
 
 	for (number = 1; number <= 100; number++)
 	{
-		if (number % 3 == 0)
+		if (number % 3 == 0 && number % 5 == 0)
 		{
-			printf("Fizz");
+			printf("FizzBuzz");
 		}
 		else if (number % 5 == 0)
 		{
 			printf("Buzz");
 		}
-		else if (number % 3 == 0 && number % 5 == 0)
+		else if (number % 3 == 0)
 		{
-			printf("FizzBuzz");
+			printf("Fizz");
 		}
 		else
 		{
 			printf("%d", number);
 		}
-		if (number == 100)
-			continue;/*continue putting space after each number until number 100*/
+		if (number != 100)
+		{
 		printf(" ");
+		}
 	}
 	printf("\n");
 
