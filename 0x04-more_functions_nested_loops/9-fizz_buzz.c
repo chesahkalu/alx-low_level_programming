@@ -6,7 +6,7 @@
  *        and any numbers which is multiple of 5 print Buzz,
  *        and numbers both multiple of 3 & 5,print FizzBuzz.
  *
- * Return: Always 0.
+ * Return: 0 if succesful
  */
 int main(void)
 {
@@ -31,7 +31,7 @@ int main(void)
 			printf("%d", number);
 		}
 		if (number == 100)
-			continue;/*continue putting space after each number until number 100*/
+			continue;
 		printf(" ");
 	}
 	printf("\n");
