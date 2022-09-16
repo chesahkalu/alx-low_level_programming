@@ -1,12 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - Almighty Fizzbuzz, prints numbers from 1 to 100,
- *        but any numbers which is multiple of 3, print Fizz,
- *        and any numbers which is multiple of 5 print Buzz,
- *        and numbers both multiple of 3 & 5,print FizzBuzz.
+ * main - Prints the numbers from 1-100,  for multiples of 3,
+ *        Fizz is printed instead of the number, for multiples of 5,
+ *        Buzz, and for multiples of 3 and 5 FizzBuzz is printed.
  *
- * Return: 0 if succesful
+ * Return: 0 if succesful.
  */
 int main(void)
 {
