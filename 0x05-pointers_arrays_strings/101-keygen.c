@@ -6,7 +6,7 @@
  * main - Generates random valid passwords for the
  *        program 101-crackme.
  *
- * Return: Always 0.
+ * Return: 0 if true.
  */
 
 int main(void)
