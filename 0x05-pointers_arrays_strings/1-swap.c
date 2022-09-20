@@ -12,6 +12,6 @@ void swap_int(int *a, int *b)
 
 	temp = *a;/*a value is put into temp storage*/
 	*a = *b;/*b value is put into empty a storage*/
-	*b = tmp;/*a value now in temp is then put into empty b*/
+	*b = temp;/*a value now in temp is then put into empty b*/
 }
 
