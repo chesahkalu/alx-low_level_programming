@@ -13,7 +13,7 @@ int _strlen(char *s)
 
 	while (s[length] != '\0')/*the array count != the last count of strings*/
 	{
-		length++/*count length from zero*/
+		length++;/*count length from zero*/
 	}
 
 	return (length);
