@@ -12,17 +12,17 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int aray, lent;
+	int aray = 0; d_count = 0;
 
-	aray = 0;
-	for (lent = 0; dest[lent] != '\0'; lent++)
+	while (dest[aray++])
 	{
-		while (src[aray] != '\0' && aray < n)
-		{
-			dest[lent + aray] = src[aray];
-			aray++;
-		}
+		d_count++;
 	}
 
+	for (aray = 0; src[aray] && aray < n; aray++)
+	{
+		dest[d_count++] = src[aray];
+	}
+	
 	return (dest);
 }
