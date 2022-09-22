@@ -9,18 +9,17 @@
  *
  * Return: A pointer to the destination string @dest.
  */
-
 char *_strcat(char *dest, char *src)
 {
-	int aray, lent;
+	int i, j;
 
-	aray = 0;
-	for (lent = 0; dest[lent] != '\0'; lent++)
+	i = 0;
+	for (j = 0; dest[j] != '\0'; j++)
 		;
-	while (src[aray] != '\0')
+	while (src[i] != '\0')
 	{
-		dest[lent + aray] = src[aray];
-		aray++;
+		dest[j + i] = src[i];
+		i++;
 	}
 	return (dest);
 }
