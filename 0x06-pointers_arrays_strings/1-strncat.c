@@ -23,6 +23,6 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[d_count++] = src[aray];
 	}
-	
+
 	return (dest);
 }
