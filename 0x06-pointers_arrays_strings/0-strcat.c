@@ -10,7 +10,7 @@
  * Return: A pointer to the destination string @dest.
  */
 
-char *strcat(char *dest, const char *src)
+char *strcat(char *dest, char *src)
 {
 	int aray = 0, d_count = 0;
 
