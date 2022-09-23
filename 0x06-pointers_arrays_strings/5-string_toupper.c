@@ -8,17 +8,17 @@
  * Return: pointer to the changed string.
  */
 
-char *string_toupper(char *c)
+char *string_toupper(char *str)
 {
 	int i;
 
 	i = 0;
 
-	while (c[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (c[i] >= 'a' && c[i] <= 'z')
-			c[i] -= 'a' - 'A';
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 'a' - 'A';
 		i++;
 	}
-	return (c);
+	return (str);
 }
