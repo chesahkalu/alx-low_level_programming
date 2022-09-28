@@ -8,9 +8,9 @@
  * The tasks defines  the functions
  */
 
-#include <stdlib.h> /*enclosing the files  contentinbetween ifndef,define and endif,
-		      stops the compiler from processing the file twice if its included twice,
-		      if not so, this will cause an error*/
+/*enclosing the files  contentinbetween ifndef,define and endif,		      
+stops the compiler from processing the file twice if its included twice,
+if not so, this will cause an error*/
 
 
 void reset_to_98(int *n);
@@ -22,5 +22,9 @@ void rev_string(char *s);
 void puts2(char *str);
 void puts_half(char *str);
 int _putchar(char c);
+void print_array(int *a, int n);
+char *_strcpy(char *dest, char *src);
+int _atoi(char *s);
+
 #endif
 
