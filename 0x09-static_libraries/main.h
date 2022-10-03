@@ -1,13 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
-
-/* This a header file containing declarations
- * for prototype functions included in the static library libmy.a
- *
- * enclosing the files  contentinbetween ifndef,define and endif,
- * stops the compiler from processing the file twice if its included twice,
- * if not so, this will cause an error
- * */
+#ifndef MAIN_H
+#define MAIN_H
 
 int _putchar(char c);
 int _islower(int c);
@@ -30,4 +22,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif
+#endif /*MAIN_H*/
