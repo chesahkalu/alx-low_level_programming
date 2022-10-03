@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 /* This a header file containing declarations
  * for prototype functions included in the static library libmy.a
