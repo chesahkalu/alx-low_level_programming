@@ -13,26 +13,24 @@
 
 char *_strdup(char *str)
 {
+	unsigned int i, j;
 	char *copy;
-	int i, length = 0;
-
 
 	for (i = 0; str[i]; i++)
-		length++;
+		;
+	i++;
 
-	copy = malloc(sizeof(char) * (length + 1));
+	copy = malloc(i * sizeof(char));
 
 	if (copy == NULL || str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; str[i]; i++)
+	for (j = 0; j < i; j++)
 	{
-		copy[i] = str[i];
+		copy[j] = str[j];
 	}
-
-	copy[length] = '\0';
 
 	return (copy);
 }
