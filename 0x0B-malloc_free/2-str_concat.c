@@ -16,7 +16,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *join;
 	int copy = 0;
-	int lenght = 0;
+	int length = 0;
 	int i;
 
 	if (s1 == NULL)
