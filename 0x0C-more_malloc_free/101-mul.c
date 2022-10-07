@@ -3,128 +3,146 @@
 #include <stdio.h>
 
 /**
- * main - multiplies two positive numbers
- * @argc: argument count
- * @argv: argument vectors
- * Return: 0
+ * _print - moves a string one place to the left and prints the string
+ * @str: string to move
+ * @l: size of string
+ *
+ * Return: void
  */
-int main(int argc, char *argv[])
+void _print(char *str, int l)
 {
-	char *f = argv[1];
-	char *s = argv[2];
+	int i, j;
 
-	if (argc != 3 || !onlyNumbers(f) || !onlyNumbers(s))
+	i = j = 0;
+	while (i < l)
 	{
-		printf("Error\n");
-		exit(98);
+		if (str[i] != '0')
+			j = 1;
+		if (j || i == l - 1)
+			_putchar(str[i]);
+		i++;
 	}
-	if (*f == 48 || *s == 48)
-		printf("0\n");
-	else
-		multiply(s, f);
+
+	_putchar('\n');
+	free(str);
+}
+
+/**
+ * mul - multiplies a char with a string and places the answer into dest
+ * @n: char to multiply
+ * @num: string to multiply
+ * @num_index: last non NULL index of num
+ * @dest: destination of multiplication
+ * @dest_index: highest index to start addition
+ *
+ * Return: pointer to dest, or NULL on failure
+ */
+char *mul(char n, char *num, int num_index, char *dest, int dest_index)
+{
+	int j, k, mul, mulrem, add, addrem;
+
+	mulrem = addrem = 0;
+	for (j = num_index, k = dest_index; j >= 0; j--, k--)
+	{
+		mul = (n - '0') * (num[j] - '0') + mulrem;
+		mulrem = mul / 10;
+		add = (dest[k] - '0') + (mul % 10) + addrem;
+		addrem = add / 10;
+		dest[k] = add % 10 + '0';
+	}
+	for (addrem += mulrem; k >= 0 && addrem; k--)
+	{
+		add = (dest[k] - '0') + addrem;
+		addrem = add / 10;
+		dest[k] = add % 10 + '0';
+	}
+	if (addrem)
+	{
+		return (NULL);
+	}
+	return (dest);
+}
+/**
+ * check_for_digits - checks the arguments to ensure they are digits
+ * @av: pointer to arguments
+ *
+ * Return: 0 if digits, 1 if not
+ */
+int check_for_digits(char **av)
+{
+	int i, j;
+
+	for (i = 1; i < 3; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+		{
+			if (av[i][j] < '0' || av[i][j] > '9')
+				return (1);
+		}
+	}
 	return (0);
 }
 
 /**
- * multiply - multiplies two numbers and displays it
- * @f: first "number"
- * @s: second "number"
+ * init - initializes a string
+ * @str: sting to initialize
+ * @l: length of strinf
+ *
+ * Return: void
  */
-void multiply(char *f, char *s)
+void init(char *str, int l)
 {
-	int i, len1, len2, total, fdigit, sdigit, res = 0, tmp;
-	int *ptr;
+	int i;
 
-	len1 = _strlen(f);
-	len2 = _strlen(s);
-	tmp = len2;
-	total = len1 + len2;
-	ptr = _calloc(sizeof(int), (len1 + len2));
-	for (len1--; len1 >= 0; len1--)
+	for (i = 0; i < l; i++)
+		str[i] = '0';
+	str[i] = '\0';
+}
+
+/**
+ * main - multiply two numbers
+ * @argc: number of arguments
+ * @argv: argument vector
+ *
+ * Return: zero, or exit status of 98 if failure
+ */
+int main(int argc, char *argv[])
+{
+	int l1, l2, ln, ti, i;
+	char *a;
+	char *t;
+	char e[] = "Error\n";
+
+	if (argc != 3 || check_for_digits(argv))
 	{
-		fdigit = f[len1] - '0';
-		res = 0;
-		len2 = tmp;
-		for (len2--; len2 >= 0; len2--)
+		for (ti = 0; e[ti]; ti++)
+			_putchar(e[ti]);
+		exit(98);
+	}
+	for (l1 = 0; argv[1][l1]; l1++)
+		;
+	for (l2 = 0; argv[2][l2]; l2++)
+		;
+	ln = l1 + l2 + 1;
+	a = malloc(ln * sizeof(char));
+	if (a == NULL)
+	{
+		for (ti = 0; e[ti]; ti++)
+			_putchar(e[ti]);
+		exit(98);
+	}
+	init(a, ln - 1);
+	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
+	{
+		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
+		if (t == NULL)
 		{
-			sdigit = s[len2] - '0';
-			res += ptr[len2 + len1 + 1] + (fdigit * sdigit);
-			ptr[len1 + len2 + 1] = res % 10;
-			res /= 10;
+			for (ti = 0; e[ti]; ti++)
+				_putchar(e[ti]);
+			free(a);
+			exit(98);
 		}
-		if (res)
-			ptr[len1 + len2 + 1] = res % 10;
 	}
-	while (*ptr == 0)
-	{
-		ptr++;
-		total--;
-	}
-	for (i = 0; i < total; i++)
-		printf("%i", ptr[i]);
-	printf("\n");
-}
-/**
- * onlyNumbers - determines if string has only numbers
- * @c: input string
- * Return: 0 if false, 1 if true
- */
-int onlyNumbers(char *c)
-{
-	while (*c)
-	{
-		if (*c < '0' || *c > '9')
-			return (0);
-		c++;
-	}
-	return (1);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: string s
- * Return: length of string
- */
-int _strlen(char *s)
-{
-	char *p = s;
-
-	while (*s)
-		s++;
-	return (s - p);
-}
-
-/**
- * _memset - fills memory with a constant byte
- * @s: memory area
- * @b: constant byte
- * @n: bytes of the memory area
- * Return: pointer to the memory area s
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	char *ptr = s;
-
-	while (n--)
-		*s++ = b;
-	return (ptr);
-}
-
-/**
- * _calloc - allocates memory for an array, using malloc
- * @nmemb: number of elements of pointer
- * @size: size of each member
- * Return: pointer of allocated memory
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	void *ptr;
-
-	if (!nmemb || !size)
-		return (NULL);
-	ptr = malloc(size * nmemb);
-	if (!ptr)
-		return (NULL);
-	_memset(ptr, 0, size * nmemb);
-	return (ptr);
+	_print(a, ln - 1);
+	return (0);
 }
