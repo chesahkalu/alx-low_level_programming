@@ -5,7 +5,6 @@ In this project I learned and practiced:
 - How to use `typedef` 
 
 ## Task and File Descriptions:
-## Header File :file_folder:
 
   * [dog.h](./dog.h): Header file containing definitions and prototypes for all types
     and functions written in the project.
