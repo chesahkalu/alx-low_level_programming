@@ -1,4 +1,4 @@
-C - Structures,typedef :page_with_curl:0x0E-structures_typedef
+#  C - Structures,typedef :page_with_curl:0x0E-structures_typedef
 ## About this project:
 In this project I learned and practiced:
 - When, why and how to use structures
