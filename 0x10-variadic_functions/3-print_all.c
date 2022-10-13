@@ -61,8 +61,7 @@ void print_s(va_list s)
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0;
-	unsigned int j = 0;
+	unsigned int j, i;
 	va_list vl;
 	char *separator = "";
 
@@ -76,8 +75,11 @@ void print_all(const char * const format, ...)
 
 	va_start(vl, format);
 
+	i = 0;
+
 	while (format && format[i])
 	{
+		j = 0;
 		while (struc[j].type != NULL)
 		{
 			if (*(struc[j].type) == format[i])
