@@ -81,9 +81,9 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (func[j].t != NULL)
+		while (func[j].type != NULL)
 		{
-			if (*(func[j].t) == format[i])
+			if (*(func[j].type) == format[i])
 			{
 				printf("%s", separator);
 				func[j].f(vl);
