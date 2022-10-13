@@ -67,9 +67,9 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	print_t func[] = {
-		{"c", print_c},
-		{"s", print_s},
 		{"i", print_i},
+		{"s", print_s},
+		{"c", print_c},
 		{"f", print_f},
 		{NULL, NULL}
 	};
