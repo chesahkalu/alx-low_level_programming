@@ -3,14 +3,14 @@
 #include "variadic_functions.h"
 
 /**
- * print_i - prints an int
- * @i: int to print
+ * print_c - print a char
+ * @c: char to print
  *
  * Return: void
  */
-void print_i(va_list i)
+void print_c(va_list c)
 {
-	printf("%d", va_arg(i, int));
+	printf("%c", va_arg(c, int));
 }
 
 /**
@@ -29,14 +29,14 @@ void print_s(va_list s)
 }
 
 /**
- * print_c - print a char
- * @c: char to print
+ * print_i - prints an int
+ * @i: int to print
  *
  * Return: void
  */
-void print_c(va_list c)
+void print_i(va_list i)
 {
-	printf("%c", va_arg(c, int));
+	printf("%d", va_arg(i, int));
 }
 
 /**
@@ -51,42 +51,35 @@ void print_f(va_list f)
 }
 
 /**
- * print_all - prints anything, followed by new line.
+ * print_all - prints anything
  * @format: list of argument types passed to the function
  *
  * Return: void
- *         Ignore any non char,string(char *),float,int type argument.
- *         If string argument is NULL, print nil.
  */
-
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
-	unsigned int j;
-	va_list vl;
-	char *separator = "";
-
-	print_t func[] = {
-		{"i", print_i},
-		{"s", print_s},
+	unsigned int i, j;
+	print_t p[] = {
 		{"c", print_c},
+		{"s", print_s},
+		{"i", print_i},
 		{"f", print_f},
 		{NULL, NULL}
 	};
+	va_list valist;
+	char *separator = "";
 
-	va_start(vl, format);
-	
+	va_start(valist, format);
 	i = 0;
-
 	while (format && format[i])
 	{
 		j = 0;
-		while (func[j].type != NULL)
+		while (p[j].t != NULL)
 		{
-			if (*(func[j].type) == format[i])
+			if (*(p[j].t) == format[i])
 			{
 				printf("%s", separator);
-				func[j].f(vl);
+				p[j].f(valist);
 				separator = ", ";
 				break;
 			}
@@ -94,8 +87,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-
-	va_end(vl);
-
+	va_end(valist);
 	printf("\n");
 }
