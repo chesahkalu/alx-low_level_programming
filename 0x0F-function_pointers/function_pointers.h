@@ -6,7 +6,8 @@
  *       used in the 0x0E-function_pointers directory.
  */
 
-#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int _putchar(char);
 void print_name(char *name, void (*f)(char *));
