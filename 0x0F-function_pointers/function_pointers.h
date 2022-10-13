@@ -1,5 +1,6 @@
-#ifndef _FUNCTION_POINTERS_H_
-#define _FUNCTION_POINTERS_H_
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
+
 /*
  * File: function_pointers.h
  * Desc: Header file containing prototypes for all functions
