@@ -12,33 +12,31 @@
  *
  * Return: 0 if failure, Else actual number of letters it could read and print
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t lenr, lenw;
 	char *buffer;
+	ssize_t leno, lenr, lenw;
 
 	if (filename == NULL)
 		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
+
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-	{
-		close(fd);
 		return (0);
-	}
-	lenr = read(fd, buffer, letters);
-	close(fd);
-	if (lenr == -1)
+
+	leno = open(filename, O_RDONLY);
+	lenr = read(leno, buffer, letters);
+	lenw = write(STDOUT_FILENO, buffer, lenr);
+
+	if (leno == -1 || lenr == -1 || lenw == -1 || lenw != lenr)
 	{
 		free(buffer);
 		return (0);
 	}
-	lenw = write(STDOUT_FILENO, buffer, lenr);
+
 	free(buffer);
-	if (lenr != lenw)
-		return (0);
+	close(leno);
+
 	return (lenw);
 }
