@@ -4,7 +4,7 @@ In this project i learnt and practiced;
 - How to use arguments passed to your program
 - What are two prototypes of `main` that you know of, and in which case do you use one or the other
 - How to use `__attribute__((unused))` or `(void)` to compile functions with unused variables or parameters
-* [0-whatsmyname.c](./0-whatsmyname.c): C program that prints its name,
+  * [0-whatsmyname.c](./0-whatsmyname.c): C program that prints its name,
   followed by a new line.
     * If the program is renamed, the program will print the new name without having
     to be compiled again.
