@@ -5,7 +5,7 @@ In this project i continued learning and practicing;
 - What are multidimensional arrays and how to use them
 - What are the most common C standard library functions to manipulate strings
 ## Tasks file description;
-  * [holberton.h](./holberton.h): Header file containing prototypes for all functions written
+  * [main.h](./main.h): Header file containing prototypes for all functions written
   
   * [0-memset.c](./0-memset.c): C function that fills the first `n` bytes of
   memory area pointed to by `s` with the constant byte `b`.
