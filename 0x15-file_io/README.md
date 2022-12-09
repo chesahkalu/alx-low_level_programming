@@ -1,14 +1,14 @@
 # C -File I/O :page_with_curl: 0x15-file_io
 ## About this project;
 In this project I learnt and practiced :
--How to create, open, close, read and write files
--What are file descriptors
--What are the 3 standard file descriptors, what are their purpose and what are their POSIX names
--How to use the I/O system calls open, close, read and write
--What are and how to use the flags O_RDONLY, O_WRONLY, O_RDWR
--What are file permissions, and how to set them when creating a file with the open system call
--What is a system call
--What is the difference between a function and a system call
+- How to create, open, close, read and write files
+- What are file descriptors
+- What are the 3 standard file descriptors, what are their purpose and what are their POSIX names
+- How to use the I/O system calls open, close, read and write
+- What are and how to use the flags O_RDONLY, O_WRONLY, O_RDWR
+- What are file permissions, and how to set them when creating a file with the open system call
+- What is a system call
+- What is the difference between a function and a system call
 ## Tasks file descriptions:
 * [main.h](./main.h): Header file containing prototypes for all functions written in this project.
 * [0-read_textfile.c](./0-read_textfile.c): C function that reads a text file and prints it to the `POSIX` standard output.

@@ -1,7 +1,7 @@
 # Bit Manipulation :page_with_curl: 0x14-bit_manipulation
 ## About this project:
 In this project i learnt and practiced;
--How to manipulate bits and use bitwise operators.
+- How to manipulate bits and use bitwise operators.
 ## Tasks file description:
 * [main.h](./main.h):Header file containing prototypes for all functions written in the project.
 * [0-binary_to_uint.c](./0-binary_to_uint.c): C function that converts a binary number to an `unsigned int`.
