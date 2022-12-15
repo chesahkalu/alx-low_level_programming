@@ -23,4 +23,4 @@ In this project i learnt and practiced;
     * `int div(int a, int b);`
     * `int mod(int a, int b);`
 
-* [101-make_me_win.sh](./101-make_me_win.sh):
+* [101-make_me_win.sh](./101-make_me_win.sh): Bash script to inject the libmask.so library, using LD_PRELOAD, in the giga million program
