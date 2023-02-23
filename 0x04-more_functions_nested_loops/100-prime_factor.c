@@ -1,47 +1,47 @@
 #include <stdio.h>
 
 /**
- * main - Finds and prints the largest prime
- *        factor of the number 612852475143.
- *
- * Return: Always 0.
+ * prime_factors - function declaration
+ * Description: finds largest prime factor
+ * @test_num: number to test
+ * Return: void
  */
+
+void prime_factors(long test_num);
+
+/**
+ * main - entry point
+ * Description: calls prime_factors
+ * Return: 0
+ */
+
 int main(void)
 {
-	long pf = 612852475143, div;
-
-	while (div < (pf / 2))
-	{
-		if ((pf % 2) == 0)
-		{
-			pf /= 2;
-			continue;
-		}
-
-		for (div = 3; div < (pf / 2); div += 2)
-		{
-			if ((pf % div) == 0)
-				pf /= div;
-		}
-	}
-
-	printf("%ld\n", pf);
-
+	prime_factors(612852475143);
 	return (0);
 }
-/* or
- * int main(void)
- * {
- * 	long int x = 612852475143;
- * 	long int p;
- *
- * 	for (p = 2; p < x; p++)
- * 	{
- * 		if (x % p == 0)
- * 		{
- * 			x = x / p;
- * 		}
- * 	}
- * 	printf("%ld\n", p);
- * 	return (0);
- * }
+
+/**
+ * prime_factors - function definition
+ * Description: finds the largest prime factor
+ * @test_num: the number to test
+ * Return: void
+ */
+
+void prime_factors(long test_num)
+{
+	long divisor = 2;
+
+	while (divisor != test_num)
+	{
+		if (test_num % divisor == 0)
+		{
+			test_num /= divisor;
+		}
+		else
+		{
+			divisor++;
+		}
+	}
+	printf("%ld\n", test_num);
+}
