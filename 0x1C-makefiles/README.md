@@ -6,11 +6,14 @@ In this project i learnt and practiced:
 - Setting variables
 ## Task files description:
 
-* [school.c](./school.c): C function that displays a seahorse in text,for Makefile practice purposes in project.
+**[school.c](./school.c)**
+  * C function that displays a seahorse in text,for Makefile practice purposes in project.
 
-* [main.c](./main.c): Main C function that runs the function defined in [school.c](./school.c).
+**[main.c](./main.c)**
+  * Main C function that runs the function defined in [school.c](./school.c).
 
-* [m.h](./m.h): Header file defining the function prototype used in `school.c`.
+**[m.h](./m.h)**
+  * Header file defining the function prototype used in `school.c`.
 
 **[0-Makefile](0-Makefile)**
   * Requirements:
