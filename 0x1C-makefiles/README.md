@@ -1,11 +1,12 @@
-# C - 0x1C-makefiles
+# C :page_with_curl: 0x1C-makefiles
+
 ## About this project :
 In this project i learnt and practiced:
 - Makefiles and how to use them
 - Explicit and implicit rules
 - Setting variables
-## Task files description:
 
+## Task files description:
 **[school.c](./school.c)**
   * C function that displays a seahorse in text,for Makefile practice purposes in project.
 
