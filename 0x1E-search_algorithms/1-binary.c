@@ -34,24 +34,26 @@ void print_array(int *array, size_t size)
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t l, m, r;
+	size_t i, l, r;
 
-	if (array != NULL && size > 0)
+	if (array == NULL)
+		return (-1);
+
+	for (l = 0, r = size - 1; r >= l;)
 	{
-		l = 0;
-		r = size - 1;
-		print_array(array + l, r + 1 - l);
-		while (l < r)
-		{
-			m = (l + r) / 2;
-			if (array[m] < value)
-				l = m + 1;
-			else if (array[m] > value)
-				r = m;
-			else
-				return (m);
-			print_array(array + l, r + 1 - l);
-		}
+		printf("Searching in array: ");
+		for (i = l; i < r; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+
+		i = l + (r - l) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			r = i - 1;
+		else
+			l = i + 1;
 	}
+
 	return (-1);
 }
